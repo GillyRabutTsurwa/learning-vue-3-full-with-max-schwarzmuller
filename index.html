@@ -15,15 +15,16 @@
   <header>
     <h1>Vue Course Goals</h1>
   </header>
-  <!-- NOTE: Vue features will only be available under this section. -->
-  <!-- NOTE: user-goal section and everything inside it will be accessible have access to our Vue app. Regarde ligne 11 à app.js -->
-  <!-- NOTE: Ça m'aide beaucoup à savoir l'implementation d'une appli Vue -->
   <section id="user-goal">
     <h2>My Course Goal</h2>
-    <p>{{courseGoal}}</p>
+    <!-- NOTE: reminder that you can use methods like this, but I won't be doing this often. i like to execute methods using events like click, mouseover, load etc. -->
+    <!-- for our certain case, this function will run each time our app is rendered. again, not ideal, but for learning vue, its coo. -->
+    <p>{{outputGoal()}}</p>
+    <!-- NOTE: for this outputGoal2(), we are changing the return value from courseGoalA to courseGoalB, as appropriate, by accessing our data properties in our method. for the first example, we are just using strings. look at the js file to see the difference -->
+    <p>{{outputGoal2()}}</p>
     <p>Learn more about <a v-bind:href="courseLink" target="_blank">Vue</a> </p>
+    <button @click="reloadPage">Reload Page</button>
   </section>
-  <!--  -->
 </body>
 
 </html>
